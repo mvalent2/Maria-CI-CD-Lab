@@ -46,3 +46,8 @@ jobs:
           pipx install meltano
           meltano install
 
+      # Run the pipeline using meltano
+      - name: Run the extract-load pipeline
+        run: |
+          meltano elt tap-carbon-intensity target-jsonl
+          echo "Extract-load completed successfully!"
